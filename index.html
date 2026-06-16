@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./css/index.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+    <script src=" https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js "></script>
+    <script src=" https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js "></script>
+    <script src=" https://unpkg.com/@studio-freight/lenis "></script>
+</head>
+<body>
+    <!-- https://design.samsung.com/kr/main/ -->
+    <header class="header">
+        <div class="header-left">
+            <p class="title"><img src="./img/header-logo-samsung-design-svg.svg" alt=""></p>
+            <span class="menu">
+                <p>Vision</p>
+                <p>Stories</p>
+                <p>News</p>
+                <p>Career</p>
+                <p>About</p>
+            </span>
+        </div>
+
+        <span class="header-right">
+            <p><img src="./img/header-instagram-icn2026.svg" alt=""></p>
+            <p><img src="./img/header-search-icn2026.svg" alt=""></p>
+            <p><img src="./img/header-lang-icn2026-black.svg" alt=""></p>
+        </span>
+    </header>
+
+    <div class="swiper-wrap">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <video src="https://design.samsung.com/didesign/contents_file/main-page/df_DesignSS_Vision_KV_PC3.mp4" autoplay muted loop></video>
+                    <div class="slide-text-box">
+                        <h2>Samsung Design Vision</h2>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://design.samsung.com/didesign/contents_file/main-page/01_MainBannerWeb_(1920x820)1.jpg" alt="">
+                    <div class="slide-text-box">
+                        <h2>‘26 Milan: Epilogue</h2>
+                        <p>2026 밀라노 디자인 위크 Part 3</p>
+                    </div>
+                </div>
+                <div class="swiper-slide"><video src="https://design.samsung.com/didesign/contents_file/main-page/df_designSamsung_Milan_part_2_PC__.mp4" autoplay muted loop></video>
+                    <div class="slide-text-box">
+                        <h2>‘26 Milan: Design is an art of love</h2>
+                        <p>2026 밀라노 디자인 위크 Part 2</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <section class="first-section">
+        <div class="first-section-top">
+            <div class="title-wrap">
+                <h2>Latest Stories</h2>
+                <p>More></p>
+            </div>
+            <ul class="list">
+                <li>
+                    <div class="img-box"><img src="https://design.samsung.com/didesign/contents_file/ctgbnr_milano2026-m1.png" alt=""></div>
+                    <div class="text-box">
+                        <h3>‘26 Milan: Prologue</h3>
+                        <div>2026 밀라노 디자인 위크 Part 1</div>
+                        <p>April 7, 2026</p>
+                    </div>
+                    <div class="tag">
+                        <p>Branding</p>
+                        <p>Campaign</p>
+                        <p>Exhibition</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="img-box"><img src="https://design.samsung.com/didesign/contents_file/s95h/media/Thumbnail_1x1.png" alt=""></div>
+                    <div class="text-box">
+                        <h3>Designed to Be Seen</h3>
+                        <div>S95H TV 디자인 스토리</div>
+                        <p>April 7, 2026</p>
+                    </div>
+                    <div class="tag">
+                        <p>TV/AV</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="img-box"><img src="https://design.samsung.com/didesign/contents_file/galaxy-buds4/media/Galaxy_Buds4_Series_Banner_3x4.png" alt=""></div>
+                    <div class="text-box">
+                        <h3>Expressive by Design</h3>
+                        <div>삼성 갤럭시 버즈4 시리즈 디자인 스토리</div>
+                        <p>April 7, 2026</p>
+                    </div>
+                    <div class="tag">
+                        <p>Galaxy</p>
+                        <p>Wearable</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="img-box"><img src="https://design.samsung.com/didesign/contents_file/galaxy-s26/media/2.Story Banner_3x4.jpg" alt=""></div>
+                    <div class="text-box">
+                        <h3>Meaning in Every Detail</h3>
+                        <div>삼성 갤럭시 S26 시리즈 디자인 스토리</div>
+                        <p>February 27, 2026</p>
+                    </div>
+                    <div class="tag">
+                        <p>Interview</p>
+                        <p>Galaxy</p>
+                        <p>Mobile</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="img-box"><img src="https://design.samsung.com/didesign/contents_file/20260324_oth_1x1.jpg" alt=""></div>
+                    <div class="text-box">
+                        <h3>Over the Horizon</h3>
+                        <div>삼성 갤럭시 사운드 브랜딩 스토리</div>
+                        <p>February 27, 2026</p>
+                    </div>
+                    <div class="tag">
+                        <p>Branding</p>
+                        <p>Sound</p>
+                        <p>Galaxy</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="img-box"><img src="https://design.samsung.com/didesign/contents_file/2026-olympic-edition/media/2026-olympic-vertical.jpg" alt=""></div>
+                    <div class="text-box">
+                        <h3>Designing a Moment of Glory</h3>
+                        <div>갤럭시 Z 플립7 올림픽 에디션 디자인 스토리</div>
+                        <p>February 12, 2026</p>
+                    </div>
+                    <div class="tag">
+                        <p>Event</p>
+                        <p>Galaxy</p>
+                        <p>Mobile</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="img-box"><img src="https://design.samsung.com/didesign/contents_file/design-vision/media/v_design_vision_2026.jpg" alt=""></div>
+                    <div class="text-box">
+                        <h3>The Human Side of Tech</h3>
+                        <div>삼성 디자인 비전</div>
+                        <p>January 6, 2026</p>
+                    </div>
+                    <div class="tag">
+                        <p>CDO</p>
+                        <p>Essay</p>
+                        <p>Design Vision</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="img-box"><img src="https://design.samsung.com/didesign/contents_file/season-greeting-2025/media/season-greeting-202604_1x1.jpg" alt=""></div>
+                    <div class="text-box">
+                        <h3>What’s Your Holiday Style?</h3>
+                        <div>당신의 연말은 어떤 모습인가요?</div>
+                        <p>December 23, 2025</p>
+                    </div>
+                    <div class="tag">
+                        <p>Inspiration</p>
+                        <p>Lifestyle</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="img-box"><img src="https://design.samsung.com/didesign/contents_file/samsung-design-2025/media/thumb-size21.jpg" alt=""></div>
+                    <div class="text-box">
+                        <h3>Design, Reconnected</h3>
+                        <div>새로워진 삼성 디자인 커뮤니케이션 채널</div>
+                        <p>December 1, 2025</p>
+                    </div>
+                    <div class="tag">
+                        <p>Branding</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tag-ani">
+            <h2>Discover by Tag</h2>
+            <div class="ani-top">
+                <p>Visual Graphics</p>
+                <p>Branding</p>
+                <p>Packaging</p>
+                <p>Sound</p>
+                <p>UX/UI</p>
+                <p>CMF</p>
+                <p>CDO</p>
+                <p>Visual Graphics</p>
+                <p>Branding</p>
+                <p>Packaging</p>
+                <p>Sound</p>
+                <p>UX/UI</p>
+                <p>CMF</p>
+                <p>CDO</p>
+                <p>Visual Graphics</p>
+                <p>Branding</p>
+                <p>Packaging</p>
+                <p>Sound</p>
+                <p>UX/UI</p>
+                <p>CMF</p>
+                <p>CDO</p>
+                <p>Visual Graphics</p>
+                <p>Branding</p>
+                <p>Packaging</p>
+                <p>Sound</p>
+                <p>UX/UI</p>
+                <p>CMF</p>
+                <p>CDO</p>
+            </div>
+            <div class="ani-bottom">
+                <p>Advanced Design</p>
+                <p>Galaxy</p>
+                <p>Design Thinking</p>
+                <p>Campaign</p>
+                <p>One UI</p>
+                <p>Recruiting</p>
+                <p>Metaverse</p>
+                <p>Advanced Design</p>
+                <p>Galaxy</p>
+                <p>Design Thinking</p>
+                <p>Campaign</p>
+                <p>One UI</p>
+                <p>Recruiting</p>
+                <p>Metaverse</p>
+                <p>Advanced Design</p>
+                <p>Galaxy</p>
+                <p>Design Thinking</p>
+                <p>Campaign</p>
+                <p>One UI</p>
+                <p>Recruiting</p>
+                <p>Metaverse</p>
+                <p>Advanced Design</p>
+                <p>Galaxy</p>
+                <p>Design Thinking</p>
+                <p>Campaign</p>
+                <p>One UI</p>
+                <p>Recruiting</p>
+                <p>Metaverse</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="news-section">
+        <div class="newstitle-wrap">
+            <h2>News</h2>
+            <p>More></p>
+        </div>
+        <div class="swiper newsSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="news-img"><img src="https://design.samsung.com/didesign/contents_file/20260427_news_thumb.jpg" alt=""></div>
+                    <div class="news-text">
+                        <div>2026 레드닷 디자인 어워드</div>
+                        <p>April 28, 2026</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="news-img"><img src="https://design.samsung.com/didesign/contents_file/16 X 9 01.png" alt=""></div>
+                    <div class="news-text">
+                        <div>삼성 디자인, 밀라노 디자인위크 2026 <br> 전시 참여</div>
+                        <p>March 17, 2026</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="news-img"><img src="https://design.samsung.com/didesign/contents_file/iF2026_Gold_01_W logo.jpg" alt=""></div>
+                    <div class="news-text">
+                        <div>2026 iF 디자인 어워드</div>
+                        <p>February 26, 2026</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="news-img"><img src="https://design.samsung.com/didesign/contents_file/CES_2026_Banner_edit_01.png" alt=""></div>
+                    <div class="news-text">
+                        <div>CES 2026: 삼성 테크 포럼</div>
+                        <p>January 9, 2026</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="news-img"><img src="https://design.samsung.com/didesign/contents_file/Website_Thumb_.jpg" alt=""></div>
+                    <div class="news-text">
+                        <div>포춘 브레인스톰 디자인 2025</div>
+                        <p>December 5, 2025</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="news-img"><img src="https://design.samsung.com/didesign/contents_file/20251112_100244_11.jpg" alt=""></div>
+                    <div class="news-text">
+                        <div>디자인코리아 2025</div>
+                        <p>November 14, 2025</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>* 이 페이지에는 AI 툴의 도움으로 생성된 이미지가 일부 포함되어 있습니다.</p>
+        <div class="footer-text">
+            <div class="copyright">
+                <p>© 2026 Samsung All Rights Reserved.</p>
+                <span>
+                    <p>이메일 문의</p>
+                    <p>개인정보처리방침</p>
+                </span>
+            </div>
+            <div class="select-box">
+                <div class="select-box">
+                    <button type="button" class="select-trigger">Family Site</button>
+                    
+                    <ul class="select-options">
+                        <li data-value="samsung">Samsung.com</li>
+                        <li data-value="newsroom">Samsung Newsroom</li>
+                        <li data-value="careers">Samsung Careers</li>
+                    </ul>
+                </div>
+                <div><img src="./img/footer-instagram-icn2025.svg" alt="" width="25" height="25"></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

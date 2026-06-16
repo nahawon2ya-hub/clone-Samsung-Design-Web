@@ -1,0 +1,676 @@
+@import url(../font/font.css);
+
+body{margin: 0;}  
+*{  
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+/* === header === */
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 40px;
+    position: fixed;
+    left: 0; top: 0;
+    z-index: 999;
+    background-color: white;
+    width: 100%;
+}
+.header-left{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.title{
+    margin: 0; padding: 0;
+    width: 203px;
+    cursor: pointer;
+}
+.title> img{
+    display: block;
+    width: 100%;
+}
+.menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0; padding: 0;
+    gap: 35px;
+
+    font-family: "Pretendard", "Noto Sans KR", sans-serif;
+    font-weight: 600;
+    font-size: 21px;
+    letter-spacing: -0.2px;
+    line-height: 1.6;
+}
+.menu> p{
+    cursor: pointer;
+}
+.header-right{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0; padding: 0;
+    gap: 30px;
+}
+.header-right> p{
+    margin-top: 3px;
+    cursor: pointer;
+}
+.header-right> p> img{
+    display: block;
+}
+
+
+/* === swiper === */
+.swiper-wrap{
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 90px;
+}
+.swiper.mySwiper {
+    width: 100%;
+    height: 100%;
+    will-change: width, height, border-radius;
+    margin: 0 auto;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative !important;
+    width: 100%; height: 100%;
+}
+.slide-text-box {
+    position: absolute;
+    top: 43%;       
+    left: 53%; 
+
+    transform: translateY(30px); 
+    opacity: 0;
+
+    animation: slideUp 0.8s ease-out forwards;
+
+    text-align: center;
+    color: white;     /* 글씨 색상 */
+    z-index: 10;      /* 비디오보다 무조건 위로 오도록 */
+    
+
+    h2 {
+        font-family: "Pretendard", "Noto Sans KR", sans-serif;
+        font-weight: 700;
+        font-size: 55px;
+        letter-spacing: -0.2px;
+        line-height: 1.6;
+    }
+
+    p {
+        font-size: 26px;   /* 소제목 크기 */
+        font-weight: 600;
+        text-align: left;
+        margin: 0; padding: 0;
+    }
+}
+@keyframes slideUp {
+    to {
+        transform: translateY(0);
+        opacity: 1; // 선명하게 보이기
+    }
+}
+.swiper-slide> video {
+    display: block;
+    object-fit: cover;
+    height: 100vh; width: 100%;
+}
+.swiper-slide img {
+    display: block;
+    object-fit: cover;
+    height: 100vh; width: 100%;
+}
+.swiper-button-next, .swiper-button-prev {
+    height: 50px !important; 
+    width: 50px !important;
+    margin: 0 50px !important;
+    position: relative;
+}
+.swiper-button-next > svg,
+.swiper-button-prev > svg {
+    display: none !important;
+}
+.swiper-button-next::before,
+.swiper-button-prev::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;  
+    height: 100%; 
+    
+    border-top: 2px solid white;  
+    border-right: 2px solid white;
+}
+.swiper-button-next::before {
+    transform: translate(-70%, -50%) rotate(45deg);
+}
+.swiper-button-prev::before {
+    transform: translate(-30%, -50%) rotate(-135deg);
+}
+.swiper-pagination{
+    padding-bottom: 40px !important;
+}
+.swiper-pagination-bullet{ 
+    width: 18px !important; 
+    height: 18px !important;
+    background-color: rgb(255, 255, 255) !important;
+    margin: 0 7px !important;
+    opacity: 0.5 !important;
+}
+.swiper-pagination-bullet-active{
+    background-color: white !important;
+    opacity: 1 !important;
+}
+.mySwiper.is-first {
+    
+    .slide-text-box {
+        h2 {
+            color: black !important;
+        }
+    }
+
+    // 1. 첫 번째 슬라이드일 때 화살표 색상 변경 (예: 검은색)
+    .swiper-button-next::before,
+    .swiper-button-prev::before {
+        border-top-color: #000000 !important;   /* 원하시는 색상으로 변경 */
+        border-right-color: #000000 !important;  /* 원하시는 색상으로 변경 */
+    }
+
+    // 2. 첫 번째 슬라이드일 때 일반 페이지네이션 점 색상
+    .swiper-pagination-bullet {
+        background-color: #000000 !important;  /* 원하시는 색상으로 변경 */
+    }
+
+    // 3. 첫 번째 슬라이드일 때 활성화된 페이지네이션 점 색상
+    .swiper-pagination-bullet-active {
+        background-color: #000000 !important;  /* 원하시는 색상으로 변경 */
+    }
+}
+
+
+/* === first-section === */
+.first-section{
+    
+}
+.first-section-top{
+    padding: 150px 115px 115px;
+}
+.title-wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+    padding-bottom: 30px; 
+}
+.title-wrap> h2{
+    font-size: 44px;
+    font-family: 'Pretendard';
+	font-weight: 700;
+    letter-spacing: -0.2px;
+    line-height: 1.6;
+}
+.title-wrap> p{
+    font-size: 20px;
+    font-family: 'Pretendard';
+	font-weight: 600;
+    letter-spacing: -0.2px;
+    line-height: 1.6;
+    cursor: pointer;
+}
+.list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+    row-gap: 80px;
+}
+.list> li{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.img-box{
+    border-radius: 30px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.img-box> img{
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 30px;    
+}
+.img-box:hover img {
+    transform: scale(1.1);
+}
+.text-box{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.text-box> h3{
+    font-size: 32px;
+    font-family: 'Pretendard';
+	font-weight: 700;
+    letter-spacing: -0.2px;
+    padding: 0; margin: 0;
+    cursor: pointer;
+}
+.text-box> div{
+    font-size: 20px;
+    font-family: 'Pretendard';
+	font-weight: 500;
+    letter-spacing: -0.2px;
+    line-height: 1.6;
+}
+.text-box> p{
+    font-size: 12px;
+    font-family: 'Pretendard';
+	font-weight: 500;
+    letter-spacing: -0.2px;
+    line-height: 1.6;
+}
+.tag{}
+.tag> p{
+    font-size: 16px;
+    font-family: 'Pretendard';
+	font-weight: 700;
+    letter-spacing: -0.2px;
+    line-height: 1.6;
+
+    background-color: black;
+    color: white;
+    display: inline-block;
+    border-radius: 20px;
+    padding: 1px 10px;
+    cursor: pointer;
+}
+.tag-ani{
+    width: 100%;
+    overflow: hidden;  
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 200px;
+}
+.tag-ani> h2{
+    font-size: 48px;
+    font-family: 'Pretendard';
+	font-weight: 700;
+    letter-spacing: -0.2px;
+    line-height: 1.6;
+
+    padding: 28px 115px;
+}
+.ani-top{
+    display: flex;
+    align-items: center;
+    gap: 20px;    
+    animation: text-to-right 50s linear infinite;
+    width: max-content;
+}
+.ani-top> p{
+    font-size: 40px;
+    font-family: 'Pretendard';
+	font-weight: 700;
+    letter-spacing: -0.2px;
+
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    padding: 10px 25px;  
+    cursor: pointer;  
+}
+.ani-bottom{
+    display: flex;
+    align-items: center;
+    gap: 20px;  
+    animation: text-to-left 50s linear infinite;
+    width: max-content;
+}
+.ani-bottom> p{
+    font-size: 40px;
+    font-family: 'Pretendard';
+	font-weight: 700;
+    letter-spacing: -0.2px;
+
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    padding: 10px 25px;
+    cursor: pointer;
+}
+@keyframes text-to-right{
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes text-to-left{
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.ani-top:hover,
+.ani-bottom:hover {
+    animation-play-state: paused;
+}
+
+
+/* === news-section === */
+.news-section{
+    background-color: #eee;
+    padding: 90px 0 50px;
+}
+.news-section> .swiper{
+    margin-top: 0;
+}
+.newstitle-wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+    padding: 0 115px; 
+}
+.newstitle-wrap> h2{
+    font-size: 44px;
+    font-family: 'Pretendard';
+	font-weight: 700;
+    letter-spacing: -0.2px;
+    line-height: 1.6;
+}
+.newstitle-wrap> p{
+    font-size: 20px;
+    font-family: 'Pretendard';
+	font-weight: 600;
+    letter-spacing: -0.2px;
+    line-height: 1.6;
+    cursor: pointer;
+}
+.newsSwiper{
+    width: 100%;
+    height: 100%;
+}
+.newsSwiper> .swiper-wrapper{
+    display: flex;
+    padding: 40px 0;
+}
+.newsSwiper> .swiper-wrapper> .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    background-color: transparent;
+    align-items: flex-start;
+    gap: 20px;
+}
+.news-img {
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.news-img> img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease;
+}
+.news-img:hover img{
+    transform: scale(1.2);
+    transition: transform 0.6s ease;
+}
+.news-text{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+.news-text> div{
+    font-size: 32px;
+    font-family: 'Pretendard';
+	font-weight: 800;
+    text-align: left;
+    cursor: pointer;
+}
+.news-text> p{
+    font-size: 12px;
+    font-family: 'Pretendard';
+	font-weight: 500;
+    letter-spacing: -0.2px;
+    line-height: 1.6;
+}
+.newsSwiper> .swiper-button-next::before, .newsSwiper> .swiper-button-prev::before{
+    display: none;
+}
+.newsSwiper> .swiper-button-next > svg,
+.newsSwiper> .swiper-button-prev > svg {
+    display: block !important;
+}
+.newsSwiper> .swiper-button-next{
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    right: 0 !important;
+    padding: 0 !important; 
+    margin: 0 !important;
+    top: 23% !important;
+    width: 84px !important;
+    height: 84px !important;
+    border: 1px solid rgb(194, 194, 194);
+}
+.newsSwiper> .swiper-button-next> svg{
+    width: 20% !important; 
+    height: 20% !important;
+    stroke: currentColor !important;
+    stroke-width: 1.5px !important;
+}
+.newsSwiper> .swiper-button-prev{
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    left: 0 !important;
+    padding: 0 !important; 
+    margin: 0 !important;
+    top: 23% !important;
+    width: 84px !important;
+    height: 84px !important;
+    border: 1px solid rgb(194, 194, 194);
+}
+.newsSwiper> .swiper-button-prev> svg{
+    width: 20% !important; 
+    height: 20% !important;
+    stroke: currentColor !important;
+    stroke-width: 1.5px !important;
+}
+.newsSwiper .swiper-slide {
+    opacity: 0.35; /* 기본적으로 슬라이드를 흐리게 설정 */
+    transition: opacity 0.4s ease; /* 투명도가 부드럽게 변하도록 처리 */
+}
+
+/* 화면에 온전히 정해진 비율만큼 다 들어온 슬라이드만 선명하게 복구 */
+.newsSwiper .swiper-slide-active,
+.newsSwiper .swiper-slide-active + .swiper-slide,
+.newsSwiper .swiper-slide-active + .swiper-slide + .swiper-slide {
+    opacity: 1 !important;
+}
+
+/* 2. 첫 화면/마지막 화면 도달 시 화살표 완전히 없애기 */
+.newsSwiper .swiper-button-next.swiper-button-disabled,
+.newsSwiper .swiper-button-prev.swiper-button-disabled {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+
+/* === footer === */
+footer{
+    padding: 10px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+footer> p{
+    font-size: 14px;
+    color: gray;
+    font-family: 'Pretendard';
+    font-weight: 500;
+    text-align: right;
+}
+.footer-text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;    
+}
+.copyright{
+    display: flex;
+    gap: 20px;
+}
+.copyright> p{
+    font-size: 14px;
+    font-family: 'Pretendard';
+    font-weight: 200;
+}
+.copyright> span{
+    display: flex;
+    font-size: 14px;
+    color: black;
+    font-family: 'Pretendard';
+    font-weight: 700;
+}
+.copyright> span> p{    
+    padding: 0 15px;
+    cursor: pointer;
+}
+.copyright> span> p:nth-of-type(1){    
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    
+}
+
+/* 🔴 여기서부터 완전히 바뀐 셀렉트 박스 스타일입니다 */
+.select-box {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: 300px;
+    gap: 20px;
+}
+
+/* select 대신 버튼 스타일링 (기본 상태: 위쪽 화살표 ▲) */
+.select-box .select-trigger {
+    width: 100%;
+    padding: 12px 40px 12px 15px;
+    font-size: 16px;
+    color: black;
+    font-family: 'Pretendard';
+    font-weight: 700;
+    background-color: #fff;
+    border: 1px solid #c2c2c2;
+    cursor: pointer;
+    text-align: left;
+    outline: none;
+
+    /* 평소에는 위쪽 화살표(▲) */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='none' stroke='%23000000' stroke-width='2.5'%3E%3Cpolyline points='18 15 12 9 6 15'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+}
+
+/* 🔴 옵션 열렸을 때 버튼 스타일 (아래쪽 화살표 ▼) */
+.select-box.open .select-trigger {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='none' stroke='%23000000' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+/* 🔴 수정: 평소에는 위로 펼쳐질 준비를 하고 숨겨둡니다 */
+.select-box .select-options {
+    position: absolute;
+    bottom: 90%; /* 부모 머리 위로 배치 */
+    left: 0;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    background-color: #fff;
+    border-top: 1px solid #c2c2c2;
+    border-left: 1px solid #c2c2c2;
+    border-right: 1px solid #c2c2c2;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+    z-index: 99;
+
+    /* 🟢 [핵심] 아래에서 위로 부채처럼 펼쳐지는 축 설정 */
+    transform-origin: bottom center; /* 축을 바닥(bottom)에 고정시킵니다 */
+    transform: scaleY(0);            /* Y축(높이)을 0으로 압축해서 아예 접어둡니다 */
+    opacity: 0;
+    
+    /* 가속도 곡선(cubic-bezier)을 주어 촥~ 펼쳐지는 쫀득한 느낌을 줍니다 */
+    transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.1), opacity 0.2s ease;
+}
+
+/* 🔴 수정: .open 클래스가 붙으면 바닥을 축으로 위로 촥 펼쳐집니다 */
+.select-box.open .select-options {
+    opacity: 1;
+    transform: scaleY(1); /* 압축했던 Y축을 100%로 복구하면서 위로 펼쳐짐 */
+}
+
+/* 내부 옵션 글자 스타일 */
+.select-box .select-options li {
+    padding: 12px 15px;
+    font-size: 16px;
+    color: black;
+    font-family: 'Pretendard';
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+/* 마우스 올렸을 때 하이라이트 효과 */
+.select-box .select-options li:hover {
+    background-color: #f5f5f5;
+}
+.select-box> div{
+    cursor: pointer;
+}
+.select-box> div> img{}
+
+
+
+
+
+
+
+
+/* === 반응형 === */
+/* 1. 데스크톱 하위 및 대형 태블릿 (최대 1200px) */
+@media (max-width: 1200px) {
+}
+
+/* 2. 일반 태블릿 해상도 (최대 1024px) */
+@media (max-width: 1024px) {
+}
+
+/* 3. 모바일 스마트폰 해상도 (최대 768px) */
+@media (max-width: 768px) {
+}
+
+/* 3. 모바일 스마트폰 해상도 (최대 650px) */
+@media (max-width: 650px) {
+}
