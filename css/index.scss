@@ -10,6 +10,7 @@ body{margin: 0;}
 
 
 /* === header === */
+.burger-menu{display: none;}
 .header{
     display: flex;
     align-items: center;
@@ -659,18 +660,271 @@ footer> p{
 
 
 /* === 반응형 === */
-/* 1. 데스크톱 하위 및 대형 태블릿 (최대 1200px) */
-@media (max-width: 1200px) {
-}
-
-/* 2. 일반 태블릿 해상도 (최대 1024px) */
+/* 1. 데스크톱 하위 및 대형 태블릿 (최대 1024px) */
 @media (max-width: 1024px) {
+    .header { padding: 20px; }
+    .title { width: 127px; }
+    .menu { 
+        font-size: 13.5px; 
+        gap: 20px;
+    }
+    .header-left { gap: 30px; }
+    .header-right { gap: 20px; }
+    .header-right > p {
+        width: 16.25px;
+        height: 16.25px;
+    }
+    .header-right > p > img {
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-wrap {
+        height: 60vh;
+        margin-top: 0px;
+    }
+    .swiper-slide > video {
+        height: 100%;
+    }
+    .swiper-slide img {
+        height: 100%;
+    }
+    .swiper-button-next, .swiper-button-prev {
+        height: 28px !important;
+        width: 28px !important;
+        margin: 0 28px !important;
+    }
+    .swiper-pagination-bullet {
+        width: 12px !important;
+        height: 12px !important;
+    }
+    .slide-text-box h2 {
+        font-size: 36px;
+    }
+    .slide-text-box p {
+        font-size: 18px;
+    }
+
+    .slide-text-box { top: 45%; }
+    .title-wrap > h2 { font-size: 27.5px; }
+    .title-wrap > p { font-size: 12.5px; }
+    .first-section-top { padding: 100px 40px 80px; }
+    .list {
+        column-gap: 25px;
+        row-gap: 50px;
+    }
+    .img-box { border-radius: 10px; }
+    .img-box > img { border-radius: 10px; }
+    .text-box { gap: 8px; }
+    .text-box > h3 { font-size: 22px; }
+    .text-box > div { font-size: 13px; }
+    .text-box > p { font-size: 8px; }
+    .tag > p { font-size: 9px; }
+
+    .tag-ani {
+        gap: 12px;
+        padding-bottom: 130px;
+    }
+    .tag-ani > h2 {
+        font-size: 27.5px;
+        padding: 28px 40px 10px;
+    }
+    .ani-top > p {
+        font-size: 28px;
+        padding: 5px 20px;
+    }
+    .ani-bottom > p {
+        font-size: 28px;
+        padding: 7px 20px;
+    }
+
+    .news-section { padding: 50px 0 30px; }
+    .newsSwiper > .swiper-button-next {
+        width: 50px !important;
+        height: 50px !important;
+    }
+    .newsSwiper > .swiper-button-prev {
+        width: 50px !important;
+        height: 50px !important;
+    }
+    .newstitle-wrap { padding: 0 40px; }
+    .newstitle-wrap > h2 { font-size: 27.5px; }
+    .newstitle-wrap > p { font-size: 12.5px; }
+    .news-text > div { font-size: 22px; }
+    .news-text > p { font-size: 9px; }
+
+    footer > p { font-size: 9px; }
+    .select-box > div> img {
+        width: 15px; height: 15px;
+    }
+    .select-box .select-trigger {
+        padding: 6px 20px 6px 10px;
+        font-size: 11px;
+    }
+    .select-box {
+        width: 175px;
+        gap: 10px;
+    }
+    .select-box .select-options li {
+        padding: 7px 10px;
+        font-size: 11px;
+    }
+
+    footer {
+        padding: 5px 27px;
+        gap: 12px;
+    }
+    .copyright { gap: 10px; }
+    .copyright > p { font-size: 12px; }
+    .copyright > span { font-size: 9px; }
+    .copyright > span > p:nth-of-type(1) {
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+    }
+    .copyright > span > p { padding: 0 10px; }
 }
 
-/* 3. 모바일 스마트폰 해상도 (최대 768px) */
+/* 모바일 스마트폰 해상도 (최대 768px) */
 @media (max-width: 768px) {
+    .header{display: none;}
+    .burger-menu{
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999999;
+        background-color: white;
+        width: 100%;
+    }
+    .toggle{}
+    .toggle> div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 50px;
+        
+    }
+    .burger-title{
+        width: 215px;
+    }
+    .burger-title> img{
+        width: 100%;
+    }
+    .menu-btn{
+        display: flex;
+        align-items: center;
+        gap: 25px;
+    }
+    .menu-btn> div{
+    }
+    .menu-btn> p> img{}
+    .menu-btn> button{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        width: 40px;
+        height: 40px;
+        background: 0 0;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        flex-shrink: 0;
+
+        &.active{
+            span:nth-of-type(1){
+                transform: translateY(4.5px) rotate(45deg);        
+            }
+            span:nth-of-type(2){
+                transform: translateY(-4.5px) rotate(-45deg);        
+            }            
+        }
+    }
+    .menu-btn> button> span{
+        display: block;
+        width: 28px;
+        height: 3px;
+        background-color: black;
+        border-radius: 1px;
+        transform-origin: center;
+        transition: transform .3s ease;
+        transform: translateY(0px) rotate(0deg);   
+    }
+    .toggle {
+        nav {
+            position: fixed;
+            right: 0;
+            width: 100%; height: 100%;
+            background-color: white;
+            transform: translateX(100%);
+            transition: 1s;
+            padding: 0 52px;
+            padding-top: 65px;
+            z-index: 999;  
+            
+
+            &.active { 
+            transform: translateX(0%); 
+            }
+        }
+
+        nav> span {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        nav> span> a{
+            font-size: 50px;
+            font-family: 'Pretendard';
+	        font-weight: 600;
+            text-decoration: none;
+            color: black;
+        }
+
+        nav> div {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        nav> div> .lang{
+            display: flex;
+            margin-top: 70px;
+            gap: 25px;
+        }
+        nav> div> .lang> p{
+            font-size: 30px;
+            font-family: 'Pretendard';
+	        font-weight: 600;
+        }
+        nav> div> .insta {
+            display: flex;
+            margin-top: 130px;
+            gap: 10px;
+        }
+        nav> div> .insta> p {
+            font-size: 36px;
+            font-family: 'Pretendard';
+	        font-weight: 600;
+        }
+        nav> div> .insta> p:nth-of-type(1) {
+            width: 36px; height: 36px;
+        }
+        nav> div> .insta> p:nth-of-type(1)> img {
+            width: 100%; height: 100%;
+        }
+
+        .menu-btn {
+            display: flex; 
+
+            &:has(button.active) {
+            > div {
+                display: none;
+            }
+            }
+        }
+    }
+
+    .swiper-wrap { height: 100vh; }
 }
 
-/* 3. 모바일 스마트폰 해상도 (최대 650px) */
-@media (max-width: 650px) {
-}

@@ -41,7 +41,8 @@ function checkFirstSlide(swiperInstance) {
         swiperInstance.el.classList.remove('is-first');
     }
 }
-
+ 
+//뉴스섹션
 var swiper = new Swiper(".newsSwiper", {
     slidesPerView: 3,
     spaceBetween: 30,
@@ -53,7 +54,26 @@ var swiper = new Swiper(".newsSwiper", {
     nextEl: ".newsSwiper .swiper-button-next",
     prevEl: ".newsSwiper .swiper-button-prev",
     },
+
+    breakpoints: {
+        // 화면 너비가 769px 이상일 때 (태블릿 구간)
+        1024: {
+            slidesPerView: 3,        // 슬라이드를 약 2개 가량 노출
+            spaceBetween: 30,          // 간격을 30px로 넓힘
+            slidesOffsetBefore: 50,    // 좌측 여백 50px
+            slidesOffsetAfter: 50,     // 우측 여백 50px
+        },
+        // 화면 너비가 1200px 이상일 때 (데스크톱 노트북/PC 구간)
+        768: {
+            slidesPerView: 3,        // 원하셨던 2.3개 노출 (가장 크게 보임)
+            spaceBetween: 40,          // 간격을 40px로 시원하게 넓힘
+            slidesOffsetBefore: 120,   // 원래 지정하신 데스크톱 좌측 여백 120px 유지
+            slidesOffsetAfter: 120,    // 원래 지정하신 데스크톱 우측 여백 120px 유지
+        }
+    }
 });
+
+
 
 /* ========== 스크롤 ========== */
 //스무스 스크롤
@@ -77,17 +97,25 @@ var swiper = new Swiper(".newsSwiper", {
 
 
 //===============첫번째 스와이퍼 애니메이션================//
-    gsap.to(".swiper.mySwiper",{
-        borderRadius: "20px",   // 최종 모서리 둥글기
-        clipPath: "inset(5% 6.2% round 20px)",
+    const getClipPathValue = () => {
+    if (window.innerWidth >= 1200) {
+        return "inset(5% 6.2% round 20px)"; // 기본 화면 (기존 유지)
+        } else {
+            return "inset(2% 4% round 12px)";    // 1200px 미만 반응형: 덜 줄어들도록 수치 축소 + 모서리도 살짝 완만하게
+        }
+    };  
+
+    gsap.to(".swiper.mySwiper", {
+        borderRadius: window.innerWidth >= 1200 ? "20px" : "12px", // 모서리 둥글기도 화면에 맞게 조절
+        clipPath: getClipPathValue(),
         duration: 0.6,
         ease: "power2.out",
         scrollTrigger: {
-            trigger: ".swiper-wrap", // HTML에 직접 만든 부모를 타겟으로!
+            trigger: ".swiper-wrap",
             start: "top top",
-            end: "bottom top",     
+            end: "bottom top", 
             toggleActions: "play none none reverse",
-            invalidateOnRefresh: true
+            invalidateOnRefresh: true // 💡 화면 리사이즈 시 위 조건문 수치들을 다시 계산해 줍니다.
         }
     });
 
@@ -104,15 +132,26 @@ var swiper = new Swiper(".newsSwiper", {
         }
     });
 
+    // 2. [수정본] 화면 크기별 조건이 들어간 호버 애니메이션
     gsap.utils.toArray(".img-box").forEach(box => {
         const img = box.querySelector("img");
         
         box.addEventListener("mouseenter", () => {
-            gsap.to(img, { scale: 1.2, duration: 0.4, ease: "power2.out", overwrite: "auto" });
+            if (window.innerWidth >= 1200) {
+                // 💻 1200px 이상 대형 기본 화면: 1.2로 크게 확대
+                gsap.to(img, { scale: 1.2, duration: 0.4, ease: "power2.out", overwrite: "auto" });
+            } else if (window.innerWidth >= 1024) {
+                // 💻 1024px ~ 1199px 노트북/태블릿 가로 화면: 1.1로 적당히 확대
+                gsap.to(img, { scale: 1.1, duration: 0.4, ease: "power2.out", overwrite: "auto" });
+            }
+            // 📱 1024px 미만 모바일/태블릿: 자바스크립트 애니메이션 실행 안 함 (SCSS가 처리하도록)
         });
         
         box.addEventListener("mouseleave", () => {
-            gsap.to(img, { scale: 1, duration: 0.4, ease: "power2.out", overwrite: "auto" });
+            // 마우스가 나갈 때는 화면 크기 상관없이 무조건 원래 크기(1)로 복구
+            if (window.innerWidth >= 1024) {
+                gsap.to(img, { scale: 1, duration: 0.4, ease: "power2.out", overwrite: "auto" });
+            }
         });
     });
 
@@ -151,3 +190,13 @@ document.addEventListener('click', () => {
 });
 
 
+
+//========== 버거메뉴 =============//
+const elToggle = document.querySelector('.toggle button'),
+      elNav = document.querySelector('.toggle nav');
+
+
+      elToggle.onclick = function(){
+          this.classList.toggle('active');
+          elNav.classList.toggle('active');
+      }
